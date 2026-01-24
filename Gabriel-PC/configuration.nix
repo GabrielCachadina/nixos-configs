@@ -10,7 +10,8 @@
       ./global.nix
       ./hardware-configuration.nix
       ./modules/bootloader.nix
-      ./modules/docker.nix
+      ./modules/docker/dashy.nix
+      ./modules/docker/qbittorrent.nix
       ./modules/remove-bloat.nix
       ./modules/programs/programs.nix
       ./modules/programs/newsboat.nix
@@ -19,12 +20,20 @@
       ./modules/services.nix
     ];
 
-  # Enable networking
+
+  #-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+  #				Networking
+  #-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
   networking.networkmanager.enable = true;
+  networking.firewall.enable = true; 
+  
 
   # Set your time zone.
   time.timeZone = "Europe/Madrid";
 
+  #-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+  #				Language
+  #-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -39,31 +48,17 @@
     LC_TELEPHONE = "es_ES.UTF-8";
     LC_TIME = "es_ES.UTF-8";
   };
-
-  # Remove nixos versions older than 14 days weekly
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 14d";
-  };
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.desktopManager.gnome.enable = true;
-  services.displayManager.gdm.enable = true;
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "es";
     variant = "";
   };
-
   # Configure console keymap
   console.keyMap = "es";
 
-
+  #-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+  #				Sound
+  #-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -80,12 +75,33 @@
     #media-session.enable = true;
   };
 
+  #-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+  #				Users
+  #-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
   users.users.${config.globals.username} = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" ];
   };
+  
+  #-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+  #				Gnome
+  #-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+  # Enable the GNOME Desktop Environment.
+  services.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  # Enable the X11 windowing system.
+  services.xserver.enable = true;
+
+  #-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+  #				NixOS-CleanUp
+  #-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+  # Remove nixos versions older than 14 days weekly
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 14d";
+  };
 
 
   system.stateVersion = "25.11"; # Did you read the comment?
-
 }

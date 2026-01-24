@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 
+
 {
   virtualisation.docker.enable = true;
 
@@ -26,7 +27,6 @@
         "127.0.0.1:8080:8080"
       ];
 
-      # Equivalent to `restart: unless-stopped`
       autoStart = true;
     };
   };
