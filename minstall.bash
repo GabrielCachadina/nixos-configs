@@ -1,14 +1,31 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+if [[ "$EUID" -ne 0 ]]; then
+  echo "Please run as root."
+  exit 1
+fi
+
 lsblk
 echo
 read -rp "Enter disk name (e.g. sda or nvme0n1): " disk_name
+
+if [[ -z "$disk_name" ]]; then
+  echo "No disk entered. Aborting."
+  exit 1
+fi
+
 disk="/dev/$disk_name"
+
+if [[ ! -b "$disk" ]]; then
+  echo "Disk $disk does not exist."
+  exit 1
+fi
 
 echo
 echo "THIS WILL ERASE ALL DATA ON $disk"
 read -rp "Type YES to continue: " confirm
+
 if [[ "$confirm" != "YES" ]]; then
   echo "Aborted."
   exit 1
