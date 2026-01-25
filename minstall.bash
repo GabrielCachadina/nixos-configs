@@ -31,12 +31,14 @@ if [[ "$confirm" != "YES" ]]; then
   exit 1
 fi
 
-sudo parted --script "$disk" \
-  mklabel gpt \
-  mkpart ESP fat32 1MiB 1GiB \
-  set 1 esp on \
-  mkpart root ext4 1GiB -2GiB \
-  mkpart swap linux-swap -2GiB 100%
+sudo parted "$disk"<<EOF
+mklabel gpt
+mkpart ESP fat32 1MiB 1GiB
+set 1 esp on
+mkpart root ext4 1GiB -2GiB
+mkpart swap linux-swap -2GiB 100%
+quit
+EOF
 
 # Handle nvme vs sata naming automatically
 if [[ "$disk_name" == nvme* ]]; then
@@ -59,4 +61,22 @@ sudo mount -o umask=077 /dev/disk/by-label/boot /mnt/boot
 sudo swapon /dev/disk/by-label/swap
 
 sudo nixos-generate-config --root /mnt
+sudo nixos-generate-config --root /mnt
+
+# Patch configuration.nix for UEFI systemd-boot
+CONFIG="/mnt/etc/nixos/configuration.nix"
+
+# Disable GRUB
+sudo sed -i \
+  -e 's/^\s*boot\.loader\.grub\.enable\s*=.*/boot.loader.grub.enable = false;/' \
+  "$CONFIG"
+
+# Enable systemd-boot (replace if exists, append if not)
+if grep -q "boot.loader.systemd-boot.enable" "$CONFIG"; then
+    sudo sed -i 's/^\s*boot\.loader\.systemd-boot\.enable\s*=.*/boot.loader.systemd-boot.enable = true;/' "$CONFIG"
+else
+    echo "boot.loader.systemd-boot.enable = true;" | sudo tee -a "$CONFIG"
+fi
+
+
 sudo nixos-install
