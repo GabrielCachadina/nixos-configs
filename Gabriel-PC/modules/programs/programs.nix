@@ -10,6 +10,7 @@
      # Gnome Extensions
      gnomeExtensions.blur-my-shell
      gnomeExtensions.vitals
+     gnomeExtensions.caffeine
 
      # Terminal
      alacritty
@@ -20,6 +21,7 @@
 
      # System Monitor
      btop
+     nvtopPackages.amd
      tree
      fastfetch
 
@@ -67,7 +69,6 @@
      virt-manager
      qemu_kvm
      virtualbox
-
      gtk3 
      glibc
   ];

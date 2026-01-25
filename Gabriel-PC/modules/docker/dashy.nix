@@ -112,7 +112,17 @@ sections:
         icon: si-syncthing
         url: https://syncthing.gabrielcachadina.com
         statusCheck: true 
-  - name: Usefull Websites 
+  - name: Localhost
+    items:
+      - title: Syncthing
+        icon: si-syncthing
+        url: http://localhost:8384
+        statusCheck: true 
+      - title: Qbittorrent
+        icon: si-qbittorrent
+        url: http://localhost:8080
+        statusCheck: true 
+  - name: Useful Websites 
     items:
       - title: Subdomain Finder
         url: https://subdomainfinder.c99.nl/
@@ -122,37 +132,24 @@ sections:
         url: https://dle.rae.es/
   '';
 in
-
 {
   virtualisation.docker.enable = true;
-
   virtualisation.oci-containers = {
     backend = "docker";
-
     containers.dashy = {
       image = "lissy93/dashy";
-
       environment = {
         NODE_ENV = "production";
         UID = "1000";
         GID = "1000";
       };
-
       volumes = [
         "${dashyConfig}:/app/user-data/conf.yml"
       ];
-
       ports = [
         "127.0.0.1:9000:8080"
       ];
-
-      # restart: unless-stopped
       autoStart = true;
-
     };
-
   };
 }
-
-
-
