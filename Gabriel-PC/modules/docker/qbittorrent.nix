@@ -18,7 +18,7 @@
       };
       volumes = [
         "/home/${config.globals.username}/Docker/qbittorrent:/config"
-        "/home/${config.globals.username}/Docker/Downloads:/downloads"
+        "/home/${config.globals.username}/Torrents:/downloads"
       ];
       ports = [
         "127.0.0.1:8080:8080"

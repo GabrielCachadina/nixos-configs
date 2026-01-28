@@ -71,12 +71,13 @@ sudo sed -i \
   -e 's/^\s*boot\.loader\.grub\.enable\s*=.*/boot.loader.grub.enable = false;/' \
   "$CONFIG"
 
-# Enable systemd-boot (replace if exists, append if not)
+# Enable systemd-boot right after grub.disable line
 if grep -q "boot.loader.systemd-boot.enable" "$CONFIG"; then
     sudo sed -i 's/^\s*boot\.loader\.systemd-boot\.enable\s*=.*/boot.loader.systemd-boot.enable = true;/' "$CONFIG"
 else
-    echo "boot.loader.systemd-boot.enable = true;" | sudo tee -a "$CONFIG"
+    # Insert after grub.disable line
+    sudo sed -i '/boot\.loader\.grub\.enable = false;/a \
+boot.loader.systemd-boot.enable = true;' "$CONFIG"
 fi
-
 
 sudo nixos-install
