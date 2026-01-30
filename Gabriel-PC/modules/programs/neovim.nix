@@ -1,4 +1,3 @@
-# remove-bloat.nix
 { config, pkgs, ... }:
 
   #-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
@@ -93,10 +92,15 @@ let
       } 
   '';
   PluginMdConf = pkgs.writeText "render-markdown.lua" ''
-    return {
-        'MeanderingProgrammer/render-markdown.nvim',
-        opts = {},
-    } 
+return {
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.nvim' },            -- if you use the mini.nvim suite
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.icons' },        -- if you use standalone mini plugins
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
+}
   '';
   PluginSnippetsConf = pkgs.writeText "snippets.lua" ''
     return {
@@ -131,7 +135,7 @@ let
   '';
   PluginWhichConf = pkgs.writeText "which-key.lua" ''
     return {
-      { "folke/which-key.nvim", lazy = true },
+      {"folke/which-key.nvim", lazy = true },
     } 
   '';
   SnippetsConf = pkgs.writeText "which-key.lua" ''
@@ -240,18 +244,32 @@ in
   ]; 
   
   environment.systemPackages = with pkgs; [
-     # Text Editor
      neovim
   ];
+
+environment.etc."xdg/nvim/spell/es.utf-8.spl".source =
+  pkgs.fetchurl {
+    url = "https://ftp.nluug.nl/pub/vim/runtime/spell/es.utf-8.spl";
+    sha256 = "sha256-ljY3rJJc+KUb8gf6w5LWtMaXlXEdzC1ICbeIRq42e+M=";
+};
+
+environment.etc."xdg/nvim/spell/es.utf-8.sug".source =
+  pkgs.fetchurl {
+    url = "https://ftp.nluug.nl/pub/vim/runtime/spell/es.utf-8.sug";
+    sha256 = "sha256-5w80eKplPCrpBQhjKPv/TkO9ZG12U0ZF9QplNEgBvWw=";
+};
+
   # DotFiles
   systemd.tmpfiles.rules = [
-    # Create folders
+    # Create Folders
     "d /home/${config.globals.username}/.config/nvim 0755 ${config.globals.username} users -"
     "d /home/${config.globals.username}/.config/nvim/lua 0755 ${config.globals.username} users -"
     "d /home/${config.globals.username}/.config/nvim/lua/config 0755 ${config.globals.username} users -"
     "d /home/${config.globals.username}/.config/nvim/lua/plugins 0755 ${config.globals.username} users -"
     "d /home/${config.globals.username}/.config/nvim/UltiSnips 0755 ${config.globals.username} users -"
+    "d /home/${config.globals.username}/.config/nvim/spell 0755 ${config.globals.username} users -"
 
+    # Create Files
     "r /home/${config.globals.username}/.config/nvim/init.lua"
     "r /home/${config.globals.username}/.config/nvim/lua/config/lazy.lua"
     "r /home/${config.globals.username}/.config/nvim/lua/plugins/colorscheme.lua"
@@ -262,6 +280,7 @@ in
     "r /home/${config.globals.username}/.config/nvim/lua/plugins/which-key.lua"
     "r /home/${config.globals.username}/.config/nvim/UltiSnips/tex.snippets"
 
+    # Link Files
     "L+ /home/${config.globals.username}/.config/nvim/init.lua - - - - ${InitConf}"
     "L+ /home/${config.globals.username}/.config/nvim/lua/config/lazy.lua - - - - ${LazyConf}"
     "L+ /home/${config.globals.username}/.config/nvim/lua/plugins/colorscheme.lua - - - - ${PluginColorConf}"
@@ -271,5 +290,8 @@ in
     "L+ /home/${config.globals.username}/.config/nvim/lua/plugins/vimtex.lua - - - - ${PluginVimTexConf}"
     "L+ /home/${config.globals.username}/.config/nvim/lua/plugins/which-key.lua - - - - ${PluginWhichConf}"
     "L+ /home/${config.globals.username}/.config/nvim/UltiSnips/tex.snippets - - - - ${SnippetsConf}"
+    "L+ /home/${config.globals.username}/.config/nvim/spell/es.utf-8.spl - - - - /etc/xdg/nvim/spell/es.utf-8.spl"
+    "L+ /home/${config.globals.username}/.config/nvim/spell/es.utf-8.sug - - - - /etc/xdg/nvim/spell/es.utf-8.sug"
   ];
 }
+
