@@ -76,6 +76,12 @@
 
      # VPN
      wireguard-tools
+     
+     # Presentations
+     marp-cli
+
+     # Office
+     libreoffice-qt-fresh
   ];
   # Steam
   programs.steam.enable = true;
