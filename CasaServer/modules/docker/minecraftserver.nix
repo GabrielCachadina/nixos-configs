@@ -9,8 +9,8 @@
       image = "itzg/minecraft-server";
       environment = {
         TZ = "Europe/Madrid";
-        UID = "1000";
-        GID = "1000";
+        PUID = "1000";
+        PGID = "1000";
         EULA = "TRUE";
 	MEMORY = "4G";
       };

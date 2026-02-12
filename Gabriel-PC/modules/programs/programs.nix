@@ -76,7 +76,10 @@
 
      # VPN
      wireguard-tools
-     
+
+     # Games
+     prismlauncher
+
      # Presentations
      marp-cli
 
