@@ -64,9 +64,9 @@ sections:
         icon: si-audiobookshelf
         url: http://192.168.0.16:13378
         statusCheck: true
-      - title: Immich-server
-        icon: si-immich
-        url: http://192.168.0.16:2283
+      - title: PiHole
+        icon: si-pihole
+        url: http://192.168.0.16:80/admin
         statusCheck: true
       - title: Lidarr
         icon: si-applemusic
