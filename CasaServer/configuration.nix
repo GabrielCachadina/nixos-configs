@@ -20,6 +20,7 @@
       ./modules/docker/lidarr.nix
       ./modules/docker/minecraftserver.nix
       ./modules/docker/nodeexporter.nix
+      ./modules/docker/pihole.nix
       ./modules/docker/prometheus.nix
       ./modules/docker/prowlarr.nix
       ./modules/docker/qbittorrent.nix
