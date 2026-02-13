@@ -14,6 +14,7 @@
       ./modules/bootloader.nix
       #./modules/services.nix
       ./modules/docker/audiobookshelf.nix
+      ./modules/docker/dashy.nix
       ./modules/docker/grafana.nix
       ./modules/docker/jellyfin.nix
       ./modules/docker/kavita.nix
