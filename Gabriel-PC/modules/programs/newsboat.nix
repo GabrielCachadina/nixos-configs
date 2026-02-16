@@ -74,26 +74,24 @@ let
   newsboatUrls = pkgs.writeText "urls" ''
     Blogs
     https://gabrielcachadina.com/index.xml Blog "~Gabriel Cachadiña" Tech
+    https://www.jeffgeerling.com/blog.xml Blog "~Jeff Geerling" Tech
     http://lukesmith.xyz/rss.xml Blog "~Luke Smith" Tech
     Youtube
-    https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA Youtube "~Luke Smith" Tech
-    https://www.youtube.com/feeds/videos.xml?channel_id=UCsnGwSIHyoYN0kiINAGUKxg Youtube "~Wolfgang's Channel" Tech
-    https://www.youtube.com/feeds/videos.xml?channel_id=UC7YOGHUfC1Tb6E4pudI9STA Youtube "~Mental Outlaw"
-    https://www.youtube.com/feeds/videos.xml?channel_id=UCsBjURrPoezykLs9EqgamOA Youtube "~Fireship"
-    https://www.youtube.com/feeds/videos.xml?channel_id=UCD6VugMZKRhSyzWEWA9W2fg Youtube "~SsethTzeentach"
-    https://www.youtube.com/feeds/videos.xml?channel_id=UCYGDiVemmhY_Q1M-hKp4fvw Youtube "~big boss"
-    https://www.youtube.com/feeds/videos.xml?channel_id=UCkcnYVAVZQOB-nXHechtXDg Youtube "~Benjamin"
-    https://www.youtube.com/feeds/videos.xml?channel_id=UC6nSFpj9HTCZ5t-N3Rm3-HA Youtube "~Vsauce"
-    https://www.youtube.com/feeds/videos.xml?channel_id=UC1DTYW241WD64ah5BFWn4JA Youtube "~Sam O'Nella Academy"
-    https://www.youtube.com/feeds/videos.xml?channel_id=UCk2KE7yg0BwsJfr8Dp9ivUQ Youtube "~AsumSaus"
-    https://www.youtube.com/feeds/videos.xml?channel_id=UCJy232tY_LUd1NuBgsSNUEA Youtube "~SirSwag"
-    https://www.youtube.com/feeds/videos.xml?channel_id=UCW6xlqxSY3gGur4PkGPEUeA Youtube "~Seytonic"
-    https://www.youtube.com/feeds/videos.xml?channel_id=UCmu9PVIZBk-ZCi-Sk2F2utA Youtube "~3kliksphilip"
-    https://www.youtube.com/feeds/videos.xml?channel_id=UCR-DXc1voovS8nhAvccRZhg Youtube "~Jeff Geerling"
-    https://www.youtube.com/feeds/videos.xml?channel_id=UC5--wS0Ljbin1TjWQX6eafA Youtube "~bigboxSWE"
-    https://www.youtube.com/feeds/videos.xml?channel_id=UCp_5PO66faM4dBFbFFBdPSQ Youtube "~bitluni"
-    https://www.youtube.com/feeds/videos.xml?channel_id=UCuvSqzfO_LV_QzHdmEj84SQ Youtube "~Kaze Emanuar"
-    https://www.youtube.com/feeds/videos.xml?channel_id=UCV6luCxsKUK2Ld-Zav-pGeg Youtube "~MRswipez1"
+    https://www.youtube.com/feeds/videos.xml?playlist_id=UULFmu9PVIZBk-ZCi-Sk2F2utA Youtube "~3kliksphilip"
+    https://www.youtube.com/feeds/videos.xml?playlist_id=UULFk2KE7yg0BwsJfr8Dp9ivUQ Youtube "~AsumSaus"
+    https://www.youtube.com/feeds/videos.xml?playlist_id=UULFkcnYVAVZQOB-nXHechtXDg Youtube "~Benjamin"
+    https://www.youtube.com/feeds/videos.xml?playlist_id=UULFsBjURrPoezykLs9EqgamOA Youtube "~Fireship"
+    https://www.youtube.com/feeds/videos.xml?playlist_id=UULFR-DXc1voovS8nhAvccRZhg Youtube "~Jeff Geerling"
+    https://www.youtube.com/feeds/videos.xml?playlist_id=UULF7YOGHUfC1Tb6E4pudI9STA Youtube "~Mental Outlaw"
+    https://www.youtube.com/feeds/videos.xml?playlist_id=UULFV6luCxsKUK2Ld-Zav-pGeg Youtube "~MRswipez1"
+    https://www.youtube.com/feeds/videos.xml?playlist_id=UULF2eYFnH61tmytImy1mTYvhA Youtube "~Luke Smith" Tech
+    https://www.youtube.com/feeds/videos.xml?playlist_id=UULFN5xN8gIljvWYnsj06V8WbQ Youtube "~Pyrocynical"
+    https://www.youtube.com/feeds/videos.xml?playlist_id=UULFW6xlqxSY3gGur4PkGPEUeA Youtube "~Seytonic"
+    https://www.youtube.com/feeds/videos.xml?playlist_id=UULFJy232tY_LUd1NuBgsSNUEA Youtube "~SirSwag"
+    https://www.youtube.com/feeds/videos.xml?playlist_id=UULFD6VugMZKRhSyzWEWA9W2fg Youtube "~SsethTzeentach"
+    https://www.youtube.com/feeds/videos.xml?playlist_id=UULF73c_IYkwcWnBpnJ_fcB0Ig Youtube "~TobiasFate"
+    https://www.youtube.com/feeds/videos.xml?playlist_id=UULF6nSFpj9HTCZ5t-N3Rm3-HA Youtube "~Vsauce"
+    https://www.youtube.com/feeds/videos.xml?playlist_id=UULF3cpN6gcJQqcCM6mxRUo_dA Youtube "~Wendigoon"
     Twitch
     https://twitchrss.com/feeds/?username=riotgames&feed=streams Twitch "~RiotGames"
     Podcast
