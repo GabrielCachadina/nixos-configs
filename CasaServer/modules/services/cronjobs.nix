@@ -4,6 +4,9 @@ let
   SaveNixOSConfig = pkgs.writeShellScript "SaveNixOSConfig" ''
      rsync -av --no-owner --no-group --delete /etc/nixos/ /home/${config.globals.username}/Sync/NixOS/${config.globals.syncnixos}/
   '';
+  AutoUpdateNixOS = pkgs.writeShellScript "AutoUpdateNixOS" ''
+     nixos-rebuild switch --upgrade
+  '';
 in
 {
   # networking.firewall.allowedTCPPorts = [ 8384 ]; # To see the syncthing GUI from an external machine
@@ -14,6 +17,7 @@ in
     enable = true;
     systemCronJobs = [
       "0 * * * *      ${config.globals.username}    ${SaveNixOSConfig}"
+      "05 1 * * *      root   ${AutoUpdateNixOS}"
     ];
   };
 }
