@@ -18,10 +18,9 @@
         "/home/gabriel/Media/movies:/data/movies"
         "/home/gabriel/Media/music:/data/music"
       ];
-      ports = [
-        "8096:8096"
-      ];
+      networks = [ "host" ];
       autoStart = true;
     };
   };
+  networking.firewall.allowedTCPPorts = [ 8096 ];
 }
