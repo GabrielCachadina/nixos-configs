@@ -16,15 +16,10 @@
         "/home/gabriel/Docker/Pihole/etc-pihole:/etc/pihole"
         "/home/gabriel/Docker/Pihole/etc-dnsmasq.d:/etc/dnsmasq.d"
       ];
-      ports = [
-        "53:53/tcp"
-        "53:53/udp"
-        "67:67/udp"
-        "80:80/tcp"
-      ];
       networks = [ "host" ];
       autoStart = true;
     };
   };
-  networking.firewall.allowedTCPPorts = [ 80 ];
+  networking.firewall.allowedUDPPorts = [ 53 67 ];
+  networking.firewall.allowedTCPPorts = [ 53 80];
 }

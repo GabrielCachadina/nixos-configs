@@ -11,6 +11,7 @@
       ./hardware-configuration.nix
       ./modules/bootloader.nix
       ./modules/docker/dashy.nix
+      ./modules/docker/nodeexporter.nix
       ./modules/docker/qbittorrent.nix
       ./modules/remove-bloat.nix
       ./modules/programs/programs.nix

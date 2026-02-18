@@ -12,7 +12,6 @@
       ./global.nix
       ./hardware-configuration.nix
       ./modules/bootloader.nix
-      #./modules/services.nix
       ./modules/docker/audiobookshelf.nix
       ./modules/docker/dashy.nix
       ./modules/docker/grafana.nix
@@ -27,6 +26,7 @@
       ./modules/docker/qbittorrent.nix
       ./modules/docker/radarr.nix
       ./modules/docker/sonarr.nix
+      #./modules/docker/traefik.nix
       ./modules/docker/watchtower.nix
       ./modules/docker/wireguard.nix
       ./modules/programs/neovim.nix

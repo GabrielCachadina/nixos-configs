@@ -19,6 +19,13 @@ let
         basic_auth:
           username: "${config.globals.nodeexporter_localhost_user}"
           password: "${config.globals.nodeexporter_localhost_pass}"
+    
+      - job_name: "GabrielPC"
+        static_configs:
+          - targets: ["192.168.0.18:9100"]
+        basic_auth:
+          username: "${config.globals.nodeexporter_gabrielpc_user}"
+          password: "${config.globals.nodeexporter_gabrielpc_pass}"
   '';
 in
 {
@@ -34,7 +41,6 @@ in
         "/home/gabriel/Docker/Prometheus/prometheus-data:/prometheus"
         "${nodeexporterConf}:/etc/prometheus/prometheus.yml:ro"
       ];
-      ports = [ "9090:9090" ];
       networks = [ "host" ];
       autoStart = true;
     };
