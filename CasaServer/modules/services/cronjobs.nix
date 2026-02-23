@@ -2,6 +2,7 @@
 let
 
   SaveNixOSConfig = pkgs.writeShellScript "SaveNixOSConfig" ''
+     wall "Executing security copy of the /etc/nixos directory"
      rsync -av --no-owner --no-group --delete /etc/nixos/ /home/${config.globals.username}/Sync/NixOS/${config.globals.syncnixos}/
   '';
   AutoUpdateNixOS = pkgs.writeShellScript "AutoUpdateNixOS" ''

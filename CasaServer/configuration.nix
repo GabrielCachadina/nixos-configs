@@ -26,7 +26,6 @@
       ./modules/docker/qbittorrent.nix
       ./modules/docker/radarr.nix
       ./modules/docker/sonarr.nix
-      #./modules/docker/traefik.nix
       ./modules/docker/watchtower.nix
       ./modules/docker/wireguard.nix
       ./modules/programs/neovim.nix

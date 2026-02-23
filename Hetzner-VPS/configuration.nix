@@ -10,6 +10,10 @@
       ./global.nix
       ./hardware-configuration.nix
       ./modules/bootloader.nix
+      ./modules/docker/excalidraw.nix
+      ./modules/docker/grafana.nix
+      ./modules/docker/nodeexporter.nix
+      ./modules/docker/watchtower.nix
       ./modules/services/cronjobs.nix
       ./modules/services/ssh.nix
       ./modules/services/syncthing.nix

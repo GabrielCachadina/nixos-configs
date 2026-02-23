@@ -89,7 +89,7 @@ let
     https://www.youtube.com/feeds/videos.xml?playlist_id=UULFW6xlqxSY3gGur4PkGPEUeA Youtube "~Seytonic"
     https://www.youtube.com/feeds/videos.xml?playlist_id=UULFJy232tY_LUd1NuBgsSNUEA Youtube "~SirSwag"
     https://www.youtube.com/feeds/videos.xml?playlist_id=UULFD6VugMZKRhSyzWEWA9W2fg Youtube "~SsethTzeentach"
-    https://www.youtube.com/feeds/videos.xml?playlist_id=UULF73c_IYkwcWnBpnJ_fcB0Ig Youtube "~TobiasFate"
+    https://www.youtube.com/feeds/videos.xml?channel_id=UCERpgysn81hv0c0FXIjXsTg Youtube "~TobiasFate"
     https://www.youtube.com/feeds/videos.xml?playlist_id=UULF6nSFpj9HTCZ5t-N3Rm3-HA Youtube "~Vsauce"
     https://www.youtube.com/feeds/videos.xml?playlist_id=UULF3cpN6gcJQqcCM6mxRUo_dA Youtube "~Wendigoon"
     Twitch

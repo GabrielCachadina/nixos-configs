@@ -26,6 +26,13 @@ let
         basic_auth:
           username: "${config.globals.nodeexporter_gabrielpc_user}"
           password: "${config.globals.nodeexporter_gabrielpc_pass}"
+
+      - job_name: "Hetzner-VPS"
+        static_configs:
+          - targets: ["hetzner-vps.gabrielcachadina.com"]
+        basic_auth:
+          username: "${config.globals.nodeexporter_hetznervps_user}"
+          password: "${config.globals.nodeexporter_hetznervps_pass}"
   '';
 in
 {

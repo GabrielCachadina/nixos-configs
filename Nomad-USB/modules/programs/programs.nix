@@ -67,9 +67,11 @@
      virt-manager
      qemu_kvm
      virtualbox
-
      gtk3 
      glibc
+
+     # Presentations
+     marp-cli
   ];
   # Steam
   programs.steam.enable = true;
