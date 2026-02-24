@@ -85,6 +85,9 @@
 
      # Office
      libreoffice-qt-fresh
+     
+     # XMPP
+     dino
   ];
   # Steam
   programs.steam.enable = true;

@@ -13,6 +13,7 @@
       ./modules/docker/excalidraw.nix
       ./modules/docker/grafana.nix
       ./modules/docker/nodeexporter.nix
+      ./modules/docker/prosody.nix
       ./modules/docker/watchtower.nix
       ./modules/services/cronjobs.nix
       ./modules/services/ssh.nix
@@ -73,6 +74,5 @@
   #				System Version
   #-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
   system.stateVersion = "25.11"; # Did you read the comment?
-
 }
 
