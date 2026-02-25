@@ -4,8 +4,8 @@
 {
   # Ensure directory exists with correct ownership
   systemd.tmpfiles.rules = [
-    "D /home/gabriel/Docker 0755 1000 1000 -"
-    "D /home/gabriel/Docker/Grafana 0755 1000 1000 -"
+    "d /home/gabriel/Docker 0755 1000 1000 -"
+    "d /home/gabriel/Docker/Grafana 0755 1000 1000 -"
   ];
 
   virtualisation.docker.enable = true;
