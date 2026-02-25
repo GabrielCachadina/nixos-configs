@@ -23,7 +23,8 @@ let
         "smacks";
         "carbons";
         "mam";
-        "omemo";
+	"pep";
+	"omemo";
     }
 
     allow_registration = false
