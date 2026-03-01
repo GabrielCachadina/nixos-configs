@@ -12,6 +12,8 @@
       ./modules/bootloader.nix
       ./modules/docker/excalidraw.nix
       ./modules/docker/grafana.nix
+      #./modules/docker/mailserver.nix
+      ./modules/docker/mqtt.nix
       ./modules/docker/nodeexporter.nix
       ./modules/docker/prosody.nix
       ./modules/docker/watchtower.nix
@@ -55,9 +57,6 @@
   users.users.${config.globals.username} = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      tree
-    ];
   };
 
   #-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-

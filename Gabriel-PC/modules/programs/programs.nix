@@ -37,6 +37,9 @@
      cmus
      cava
 
+     # Email
+     thunderbird
+
      # Imager
      rpi-imager
 
@@ -51,7 +54,8 @@
      mosquitto
      pciutils
      usbutils
-     
+     openssl
+
      # Video
      yt-dlp
 
