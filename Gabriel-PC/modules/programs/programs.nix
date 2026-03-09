@@ -14,6 +14,7 @@
 
      # Terminal
      alacritty
+     tmux
 
      # Browser
      librewolf
@@ -64,7 +65,9 @@
 
      # Programming
      git
-     
+     python3 
+     libusb1
+
      # WOL
      wakeonlan
 
@@ -92,11 +95,12 @@
      
      # XMPP
      dino
+     xmppc
   ];
   # Steam
   programs.steam.enable = true;
   # Virtual Box
   #virtualisation.virtualbox.host.enable = true;
   #users.extraGroups.vboxusers.members = [ "gabriel" ];
-
+  programs.nix-ld.enable = true; # Compatibility layer for NixOS that allows it to run precompiled, dynamically linked Linux binaries
 }

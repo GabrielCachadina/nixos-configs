@@ -18,5 +18,8 @@
 	
      # Wireguard tools
      wireguard-tools
+
+     # XMPP
+     xmppc
   ];
 }
