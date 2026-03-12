@@ -19,8 +19,8 @@
       ./modules/docker/kavita.nix
       ./modules/docker/lidarr.nix
       ./modules/docker/minecraftserver.nix
-      ./modules/docker/n8n.nix
       ./modules/docker/nodeexporter.nix
+      ./modules/docker/nodered.nix
       ./modules/docker/pihole.nix
       ./modules/docker/prometheus.nix
       ./modules/docker/prowlarr.nix
