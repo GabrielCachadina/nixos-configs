@@ -11,9 +11,11 @@
       ./hardware-configuration.nix
       ./modules/bootloader.nix
       ./modules/docker/excalidraw.nix
-      ./modules/docker/grafana.nix
+      #./modules/docker/grafana.nix
       #./modules/docker/mailserver.nix
       ./modules/docker/mqtt.nix
+      ./modules/docker/mysql.nix
+      ./modules/docker/nocodb.nix
       ./modules/docker/nodeexporter.nix
       ./modules/docker/prosody.nix
       ./modules/docker/watchtower.nix
