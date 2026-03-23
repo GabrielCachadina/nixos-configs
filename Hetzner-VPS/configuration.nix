@@ -18,7 +18,8 @@
       #./modules/docker/nocodb.nix
       ./modules/docker/nodeexporter.nix
       ./modules/docker/prosody.nix
-      ./modules/docker/vikunja.nix
+      ./modules/docker/radicale.nix
+      #./modules/docker/vikunja.nix
       ./modules/docker/watchtower.nix
       ./modules/services/cronjobs.nix
       ./modules/services/ssh.nix

@@ -40,6 +40,12 @@
 
      # Email
      thunderbird
+     
+     # Calendar
+     gnome-calendar
+	
+     # Tasks
+     planify
 
      # Imager
      rpi-imager
