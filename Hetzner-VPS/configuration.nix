@@ -12,6 +12,7 @@
       ./modules/bootloader.nix
       ./modules/docker/excalidraw.nix
       #./modules/docker/grafana.nix
+      #./modules/docker/grist.nix
       #./modules/docker/mailserver.nix
       ./modules/docker/mqtt.nix
       #./modules/docker/mysql.nix
@@ -19,7 +20,7 @@
       ./modules/docker/nodeexporter.nix
       ./modules/docker/prosody.nix
       ./modules/docker/radicale.nix
-      #./modules/docker/vikunja.nix
+      ./modules/docker/vikunja.nix
       ./modules/docker/watchtower.nix
       ./modules/services/cronjobs.nix
       ./modules/services/ssh.nix

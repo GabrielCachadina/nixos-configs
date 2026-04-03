@@ -26,6 +26,10 @@
   	  publicKey = "${config.globals.wireguard_nomadusb_publickey}";
           allowedIPs = [ "10.100.0.3/32" ];
         }
+        { # TFN Empresa
+  	  publicKey = "${config.globals.wireguard_tfnempresa_publickey}";
+          allowedIPs = [ "10.100.0.4/32" ];
+        }
       ];
     };
   };
