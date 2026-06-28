@@ -7,7 +7,6 @@
     "d /home/gabriel/Docker/MySQL 0755 1000 1000 -"
   ];
 
-  virtualisation.docker.enable = true;
   virtualisation.oci-containers = {
     backend = "docker";
     containers.mysql = {

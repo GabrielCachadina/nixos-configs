@@ -11,18 +11,21 @@
       ./hardware-configuration.nix
       ./modules/bootloader.nix
       ./modules/docker/excalidraw.nix
+      ./modules/docker/docker.nix
       #./modules/docker/grafana.nix
       #./modules/docker/grist.nix
       #./modules/docker/mailserver.nix
       ./modules/docker/mqtt.nix
       #./modules/docker/mysql.nix
+      ./modules/docker/n8n.nix
       #./modules/docker/nocodb.nix
       ./modules/docker/nodeexporter.nix
       ./modules/docker/prosody.nix
-      ./modules/docker/radicale.nix
-      ./modules/docker/vikunja.nix
+      #./modules/docker/radicale.nix
+      #./modules/docker/vikunja.nix
       ./modules/docker/watchtower.nix
       ./modules/services/cronjobs.nix
+      #./modules/services/IA.nix
       ./modules/services/ssh.nix
       ./modules/services/syncthing.nix
       ./modules/services/website.nix

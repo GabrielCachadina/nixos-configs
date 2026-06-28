@@ -25,6 +25,7 @@
      nvtopPackages.amd
      tree
      fastfetch
+     nethogs
 
      # Note Taking
      obsidian
@@ -37,6 +38,10 @@
      # Music
      cmus
      cava
+
+     # Video Editing
+     obs-studio
+     kdePackages.kdenlive
 
      # Email
      thunderbird
@@ -73,7 +78,7 @@
      git
      python3 
      libusb1
-
+     
      # WOL
      wakeonlan
 
@@ -102,6 +107,9 @@
      # XMPP
      dino
      xmppc
+
+     # Risc-V
+     verilator
   ];
   # Steam
   programs.steam.enable = true;

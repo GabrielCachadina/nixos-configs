@@ -8,6 +8,9 @@ let
   AutoUpdateNixOS = pkgs.writeShellScript "AutoUpdateNixOS" ''
      nixos-rebuild switch --upgrade
   '';
+  RemoveUnusedContainers = pkgs.writeShellScript "RemoveUnusedContainers" ''
+     sudo docker image prune -a
+  '';
   GetPublicIP = pkgs.writeShellScript "GetPublicIP" ''
 IP_FILE="$HOME/.last_public_ip"
 PASSWORD="${config.globals.xmppbotpass}"
@@ -46,6 +49,7 @@ in
     systemCronJobs = [
       "0 * * * *	${config.globals.username}	${SaveNixOSConfig}"
       "05 1 * * *	root   				${AutoUpdateNixOS}"
+      "25 1 * * *       root                            ${RemoveUnusedContainers}"
       "0 8-22 * * *	${config.globals.username}	${GetPublicIP}"
     ];
   };

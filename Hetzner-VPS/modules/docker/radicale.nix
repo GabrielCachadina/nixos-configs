@@ -23,7 +23,6 @@ in
     "d /home/gabriel/Docker/Radicale/data 0755 1000 1000 -"
   ];
 
-  virtualisation.docker.enable = true;
   virtualisation.oci-containers = {
     backend = "docker";
     containers.radicale = {

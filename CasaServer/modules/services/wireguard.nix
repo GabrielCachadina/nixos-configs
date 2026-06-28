@@ -30,6 +30,10 @@
   	  publicKey = "${config.globals.wireguard_tfnempresa_publickey}";
           allowedIPs = [ "10.100.0.4/32" ];
         }
+        { # TFN Brother
+  	  publicKey = "${config.globals.wireguard_tfnbrother_publickey}";
+          allowedIPs = [ "10.100.0.5/32" ];
+        }
       ];
     };
   };

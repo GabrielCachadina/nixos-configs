@@ -6,13 +6,6 @@ let
       scrape_interval: 5m
 
     scrape_configs:
-      - job_name: "Linode1"
-        static_configs:
-          - targets: ["sli1.gabrielcachadina.com"]
-        basic_auth:
-          username: "${config.globals.nodeexporter_linode_user}"
-          password: "${config.globals.nodeexporter_linode_pass}"
-
       - job_name: "HomeServer"
         static_configs:
           - targets: ["localhost:9100"]

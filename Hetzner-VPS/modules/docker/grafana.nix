@@ -8,7 +8,6 @@
     "d /home/gabriel/Docker/Grafana 0755 1000 1000 -"
   ];
 
-  virtualisation.docker.enable = true;
   virtualisation.oci-containers = {
     backend = "docker";
     containers.grafana = {

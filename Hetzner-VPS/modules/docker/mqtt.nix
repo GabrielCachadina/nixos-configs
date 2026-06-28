@@ -21,7 +21,6 @@ ${config.globals.mqtt_server_key}
 in
 
 {
-  virtualisation.docker.enable = true;
   virtualisation.oci-containers = {
     backend = "docker";
     containers.mqtt = {

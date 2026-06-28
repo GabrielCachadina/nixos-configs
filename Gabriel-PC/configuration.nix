@@ -14,6 +14,7 @@
       ./modules/docker/nodeexporter.nix
       ./modules/docker/qbittorrent.nix
       ./modules/remove-bloat.nix
+      ./modules/programs/AI.nix
       ./modules/programs/programs.nix
       ./modules/programs/newsboat.nix
       ./modules/programs/neovim.nix

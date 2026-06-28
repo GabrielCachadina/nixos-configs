@@ -6,7 +6,13 @@ let
      rsync -av --no-owner --no-group --delete /etc/nixos/ /home/${config.globals.username}/Sync/NixOS/${config.globals.syncnixos}/
   '';
   AutoUpdateNixOS = pkgs.writeShellScript "AutoUpdateNixOS" ''
-     nixos-rebuild switch --upgrade
+     sudo nix-channel --update
+     sudo nixos-rebuild switch --upgrade
+     sudo nix-env --delete-generations +2 --profile /nix/var/nix/profiles/system
+     sudo nix-collect-garbage -d
+  '';
+  RemoveUnusedContainers = pkgs.writeShellScript "RemoveUnusedContainers" ''
+     sudo docker image prune -a
   '';
 in
 {
@@ -19,6 +25,7 @@ in
     systemCronJobs = [
       "0 * * * *      ${config.globals.username}    ${SaveNixOSConfig}"
       "05 1 * * *      root   ${AutoUpdateNixOS}"
+      "25 1 * * *      root   ${RemoveUnusedContainers}"
     ];
   };
 }
