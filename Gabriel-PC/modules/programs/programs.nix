@@ -110,6 +110,9 @@
 
      # Risc-V
      verilator
+
+     # Study
+     anki
   ];
   # Steam
   programs.steam.enable = true;

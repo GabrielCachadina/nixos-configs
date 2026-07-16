@@ -21,7 +21,7 @@
       #./modules/docker/nocodb.nix
       ./modules/docker/nodeexporter.nix
       ./modules/docker/prosody.nix
-      #./modules/docker/radicale.nix
+      ./modules/docker/radicale.nix
       #./modules/docker/vikunja.nix
       ./modules/docker/watchtower.nix
       ./modules/services/cronjobs.nix
@@ -80,6 +80,6 @@
   #-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
   #				System Version
   #-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
-  system.stateVersion = "25.11"; # Did you read the comment?
+  system.stateVersion = "26.05"; # Did you read the comment?
 }
 

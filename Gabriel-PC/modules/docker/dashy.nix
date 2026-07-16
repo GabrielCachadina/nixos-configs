@@ -34,7 +34,7 @@ sections:
             - title: Youtube
               url: https://www.youtube.com/results?search_query=
             - title: Nixpkgs
-              url: https://search.nixos.org/packages?channel=25.11&query=
+              url: https://search.nixos.org/packages?channel=26.05&query=
             - title: Wikipedia
               url: https://en.wikipedia.org/w/index.php?search=
 
