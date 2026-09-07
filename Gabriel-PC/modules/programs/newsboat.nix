@@ -87,6 +87,7 @@ let
     https://www.youtube.com/feeds/videos.xml?playlist_id=UULF2eYFnH61tmytImy1mTYvhA Youtube "~Luke Smith" Tech
     https://www.youtube.com/feeds/videos.xml?playlist_id=UULFN5xN8gIljvWYnsj06V8WbQ Youtube "~Pyrocynical"
     https://www.youtube.com/feeds/videos.xml?playlist_id=UULFW6xlqxSY3gGur4PkGPEUeA Youtube "~Seytonic"
+    https://www.youtube.com/feeds/videos.xml?playlist_id=UULFyYkUq0qMNP-ea7LEvspkug Youtube "~Los Economonos"
     https://www.youtube.com/feeds/videos.xml?playlist_id=UULFJy232tY_LUd1NuBgsSNUEA Youtube "~SirSwag"
     https://www.youtube.com/feeds/videos.xml?playlist_id=UULFD6VugMZKRhSyzWEWA9W2fg Youtube "~SsethTzeentach"
     https://www.youtube.com/feeds/videos.xml?channel_id=UCERpgysn81hv0c0FXIjXsTg Youtube "~TobiasFate"

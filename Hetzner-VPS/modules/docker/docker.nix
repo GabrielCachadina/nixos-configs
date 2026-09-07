@@ -5,6 +5,6 @@
   # Definition from docker containers
   virtualisation.docker = {
     enable = true;
-    package = pkgs.docker_29;
+    #package = pkgs.docker_29;
   };
 }

@@ -243,7 +243,8 @@ in
   ]; 
   
   environment.systemPackages = with pkgs; [
-     neovim
+    python314Packages.pynvim
+    neovim
   ];
 
 environment.etc."xdg/nvim/spell/es.utf-8.spl".source =

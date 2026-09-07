@@ -18,6 +18,7 @@
       ./modules/docker/jellyfin.nix
       ./modules/docker/kavita.nix
       ./modules/docker/lidarr.nix
+      ./modules/docker/linkding.nix
       ./modules/docker/minecraftserver.nix
       #./modules/docker/n8n.nix
       ./modules/docker/nodeexporter.nix

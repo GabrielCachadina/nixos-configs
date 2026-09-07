@@ -19,6 +19,7 @@
      # Browser
      librewolf
      tor-browser
+     chromium
 
      # System Monitor
      btop
@@ -78,7 +79,9 @@
      git
      python3 
      libusb1
-     
+     gcc
+     go
+
      # WOL
      wakeonlan
 

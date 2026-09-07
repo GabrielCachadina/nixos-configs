@@ -88,6 +88,10 @@ sections:
         icon: si-syncthing
         url: http://192.168.0.16:8384
         statusCheck: true
+      - title: Linkding
+        icon: si-pinboard
+        url: http://192.168.0.16:9080
+        statusCheck: true
   - name: Linode
     items:
       - title: Website

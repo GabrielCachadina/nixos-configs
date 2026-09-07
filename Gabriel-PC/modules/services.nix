@@ -4,8 +4,11 @@ let
   SaveNixOSConfig = pkgs.writeShellScript "SaveNixOSConfig" ''
      rsync -av --no-owner --no-group --delete /etc/nixos/ /home/${config.globals.username}/Sync/NixOS/${config.globals.syncnixos}/
   '';
-  WakeSleepyJoe = pkgs.writeShellScript "WakeOnLan-SleepyJoe" ''
-     wakeonlan -i 192.168.0.28 00:e0:4c:17:6b:b1
+#  WakeSleepyJoe = pkgs.writeShellScript "WakeOnLan-SleepyJoe" ''
+#     wakeonlan -i 192.168.0.28 00:e0:4c:17:6b:b1
+#  '';
+  SyncMinecraftWorld = pkgs.writeShellScript "SyncMinecraftWorld" ''
+     rsync -av --no-owner --no-group --delete /home/${config.globals.username}/.local/share/PrismLauncher/instances/26.2/minecraft/saves/ /home/${config.globals.username}/Sync/NixOS/Minecraft/
   '';
 in
 {
@@ -27,7 +30,8 @@ in
     enable = true;
     systemCronJobs = [
       "0 * * * *      ${config.globals.username}    ${SaveNixOSConfig}"
-      "0 * * * *      ${config.globals.username}    ${WakeSleepyJoe}"
+#      "0 * * * *      ${config.globals.username}    ${WakeSleepyJoe}"
+#      "0 * * * *      ${config.globals.username}    ${SyncMinecraftWorld}"
     ];
   };
 
