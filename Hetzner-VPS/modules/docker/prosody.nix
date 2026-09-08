@@ -83,6 +83,8 @@ let
     }
     
 
+
+
     ----------- Virtual hosts -----------
     -- You need to add a VirtualHost entry for each domain you wish Prosody to serve.
     -- Settings under each VirtualHost entry apply *only* to that host.
@@ -100,11 +102,21 @@ let
     
     ---Set up a MUC (multi-user chat) room server on conference.example.com:
     Component "conference.${domain}" "muc"
-    --- Store MUC messages in an archive and allow users to access it
-    modules_enabled = { "vcard_muc", "muc_mam" }
-    restrict_room_creation = false
-    muc_tombstones = false
-    muc_tombstone_expiry = 86400 * 7
+      modules_enabled = { "muc_mam" }
+
+      -- MUC message archive retention
+      muc_log_expires_after = "30d"
+      muc_log_cleanup_interval = 4 * 60 * 60
+
+      restrict_room_creation = false
+      muc_tombstones = false
+      muc_tombstone_expiry = 86400 * 7
+
+
+    -- Message archive retention
+    -- Delete archived 1-to-1/direct messages after 30 days
+    archive_expires_after = "30d"
+    archive_cleanup_interval = 4 * 60 * 60
   '';
 in
 {

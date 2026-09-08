@@ -25,6 +25,7 @@
       #./modules/docker/vikunja.nix
       ./modules/docker/watchtower.nix
       ./modules/services/cronjobs.nix
+      ./modules/services/daily-info.nix
       #./modules/services/IA.nix
       ./modules/services/ssh.nix
       ./modules/services/syncthing.nix

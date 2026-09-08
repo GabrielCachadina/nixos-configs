@@ -68,12 +68,39 @@ params = {
 # -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
 # NEWS
 # -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+
+PLAYLIST_URLS = [
+    "https://www.youtube.com/playlist?list=PLFLBjMW4wU7gYcRxzvIV9oAL7VIqmJbOW",
+    "https://www.youtube.com/playlist?list=PLZhRxE9191zPN4uc07ytohaXcS13qEgm2",
+]
+
+opts = {
+    "extract_flat": True,
+    "playlistend": 1,
+    "quiet": True,
+}
+
+news_urls = []
+
 with yt_dlp.YoutubeDL(opts) as ydl:
-    info = ydl.extract_info(PLAYLIST_URL, download=False)
+    for playlist_url in PLAYLIST_URLS:
+        info = ydl.extract_info(playlist_url, download=False)
 
-latest = info["entries"][0]
+        latest = info["entries"][0]
 
-result_news = f"\n====================\nNoticias:\n=====================\nhttps://www.youtube.com/watch?v={latest['id']}\n"
+        if latest and latest.get("id"):
+            news_urls.append(
+                f"https://www.youtube.com/watch?v={latest['id']}"
+            )
+
+result_news = "\n".join([
+    "====================",
+    "Noticias:",
+    "====================",
+    *news_urls,
+    "",
+])
+
 print(result_news)
 
 
@@ -240,7 +267,6 @@ result = "\n".join([
     result_weather
 ])
 
-
 class XMPPClient(ClientXMPP):
     def __init__(self, jid, password, recipient, message):
         super().__init__(jid, password)
@@ -250,9 +276,20 @@ class XMPPClient(ClientXMPP):
 
         self.add_event_handler("session_start", self.session_start)
 
+        # XMPP errors
+        self.add_event_handler("failed_auth", self.failed_auth)
+        self.add_event_handler("connection_failed", self.connection_failed)
+        self.add_event_handler("disconnected", self.disconnected_handler)
+        self.add_event_handler("stanza_error", self.stanza_error)
+
     async def session_start(self, event):
+        print("XMPP: session started", flush=True)
+
         self.send_presence()
+        print("XMPP: presence sent", flush=True)
+
         await self.get_roster()
+        print("XMPP: roster received", flush=True)
 
         self.send_message(
             mto=self.recipient,
@@ -260,10 +297,28 @@ class XMPPClient(ClientXMPP):
             mtype="chat"
         )
 
-        # Give the library a moment to send the stanza.
+        print("XMPP: message sent", flush=True)
+
         await asyncio.sleep(1)
+
+        print("XMPP: disconnecting", flush=True)
         self.disconnect()
 
+    def failed_auth(self, event):
+        print("XMPP ERROR: authentication failed", flush=True)
+        print(f"XMPP ERROR DETAILS: {event}", flush=True)
+        self.disconnect()
+
+    def connection_failed(self, event):
+        print("XMPP ERROR: connection failed", flush=True)
+        print(f"XMPP ERROR DETAILS: {event}", flush=True)
+
+    def stanza_error(self, event):
+        print("XMPP ERROR: stanza error", flush=True)
+        print(f"XMPP ERROR DETAILS: {event}", flush=True)
+
+    def disconnected_handler(self, event):
+        print("XMPP: disconnected", flush=True)
 
 async def main():
     client = XMPPClient(
@@ -305,7 +360,7 @@ in
     wantedBy = [ "timers.target" ];
 
     timerConfig = {
-      OnCalendar = "17:00";
+      OnCalendar = "7:00";
       Persistent = true;
     };
   };
